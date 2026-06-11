@@ -13,14 +13,7 @@ let promoState = {
 };
 
 // начало нодов приложений
-let isChromeActive = false;
-let isShopActive = false;
-let isSupplierActive = false;
-let isBankActive = false;
-let isStocksActive = false;
-let isLiderboardActive = false;
-let isUpgradeActive = false;
-let isSettingsActive = false;
+let activeApp;
 
 const ShopNode = document.querySelector(".shop__screen");
 const ShopBottomNode = document.querySelector(".item-shop-bottom");
@@ -198,13 +191,6 @@ function chromeTab(e) {
   }
 }
 
-const closeChrome = () => {
-  isChromeActive = false;
-  ChromeBottomNode.classList.remove("bottom-opened-icon");
-  mainNode.style.display = "flex";
-  ChromeNode.style.display = "none";
-};
-
 function updatePromocodeTimer() {
   const timerElement = document.querySelector(".chrome-promocodes-update");
 
@@ -265,305 +251,86 @@ setInterval(() => {
   localStorage.setItem("chromeTab", lastOpenedChromeTab);
 }, 1000);
 
+const bottomIcons = {
+  chrome: ChromeBottomNode,
+  shop: ShopBottomNode,
+  supplier: SupplierBottomNode,
+  bank: BankBottomNode,
+  stocks: StocksBottomNode,
+  liderboard: LiderboardBottomNode,
+  upgrade: UpgradeBottomNode,
+  settings: SettingsBottomNode,
+};
+
+const AppNodes = {
+  main: mainNode,
+  chrome: ChromeNode,
+  shop: ShopNode,
+  supplier: SupplierNode,
+  bank: BankNode,
+  stocks: StocksNode,
+  liderboard: LiderboardNode,
+  upgrade: UpgradeNode,
+  settings: SettingsNode,
+};
+
 const openApp = (app) => {
-  switch (app) {
-    case "chrome":
-      if (!isChromeActive) {
-        isChromeActive = true;
-        isShopActive = false;
-        isSupplierActive = false;
-        isBankActive = false;
-        isStocksActive = false;
-        isLiderboardActive = false;
-        isUpgradeActive = false;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.add("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "none";
-        ChromeNode.style.display = "flex";
-        if (lastOpenedChromeTab === 1) {
-          document
-            .querySelector(".chrome-screen-kitties")
-            .classList.remove("d-none");
-          document
-            .querySelector(".chrome-screen-capybaras")
-            .classList.add("d-none");
-          document
-            .querySelector(".chrome-screen-promocodes")
-            .classList.add("d-none");
-          document.getElementById("tab-chrome-1").classList.add("active");
-          document.getElementById("tab-chrome-2").classList.remove("active");
-          document.getElementById("tab-chrome-3").classList.remove("active");
-        } else if (lastOpenedChromeTab === 2) {
-          document
-            .querySelector(".chrome-screen-kitties")
-            .classList.add("d-none");
-          document
-            .querySelector(".chrome-screen-capybaras")
-            .classList.remove("d-none");
-          document
-            .querySelector(".chrome-screen-promocodes")
-            .classList.add("d-none");
-          document.getElementById("tab-chrome-1").classList.remove("active");
-          document.getElementById("tab-chrome-2").classList.add("active");
-          document.getElementById("tab-chrome-3").classList.remove("active");
-        } else if (lastOpenedChromeTab === 3) {
-          document
-            .querySelector(".chrome-screen-kitties")
-            .classList.add("d-none");
-          document
-            .querySelector(".chrome-screen-capybaras")
-            .classList.add("d-none");
-          document
-            .querySelector(".chrome-screen-promocodes")
-            .classList.remove("d-none");
-          document.getElementById("tab-chrome-1").classList.remove("active");
-          document.getElementById("tab-chrome-2").classList.remove("active");
-          document.getElementById("tab-chrome-3").classList.add("active");
-        }
-      } else {
-        return;
-      }
-      break;
+  if (activeApp === app) return;
 
-    case "shop":
-      if (!isShopActive) {
-        isChromeActive = false;
-        isShopActive = true;
-        isSupplierActive = false;
-        isBankActive = false;
-        isStocksActive = false;
-        isLiderboardActive = false;
-        isUpgradeActive = false;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.add("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "flex";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "none";
-      } else {
-        return;
-      }
-      break;
+  activeApp = app;
 
-    case "supplier":
-      if (!isSupplierActive) {
-        isChromeActive = false;
-        isShopActive = false;
-        isSupplierActive = true;
-        isBankActive = false;
-        isStocksActive = false;
-        isLiderboardActive = false;
-        isUpgradeActive = false;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.add("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "flex";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "none";
-      } else {
-        return;
-      }
-      break;
-
-    case "bank":
-      if (!isBankActive) {
-        isChromeActive = false;
-        isShopActive = false;
-        isSupplierActive = false;
-        isBankActive = true;
-        isStocksActive = false;
-        isLiderboardActive = false;
-        isUpgradeActive = false;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.add("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "flex";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "none";
-      } else {
-        return;
-      }
-      break;
-
-    case "stocks":
-      if (!isStocksActive) {
-        isChromeActive = false;
-        isShopActive = false;
-        isSupplierActive = false;
-        isBankActive = false;
-        isStocksActive = true;
-        isLiderboardActive = false;
-        isUpgradeActive = false;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.add("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "flex";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "none";
-      } else {
-        return;
-      }
-      break;
-
-    case "liderboard":
-      if (!isLiderboardActive) {
-        isChromeActive = false;
-        isShopActive = false;
-        isSupplierActive = false;
-        isBankActive = false;
-        isStocksActive = false;
-        isLiderboardActive = true;
-        isUpgradeActive = false;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.add("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "flex";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "none";
-      } else {
-        return;
-      }
-      break;
-
-    case "upgrade":
-      if (!isUpgradeActive) {
-        isChromeActive = false;
-        isShopActive = false;
-        isSupplierActive = false;
-        isBankActive = false;
-        isStocksActive = false;
-        isLiderboardActive = false;
-        isUpgradeActive = true;
-        isSettingsActive = false;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.add("bottom-opened-icon");
-        SettingsBottomNode.classList.remove("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "flex";
-        SettingsNode.style.display = "none";
-      } else {
-        return;
-      }
-      break;
-
-    case "settings":
-      if (!isSettingsActive) {
-        isChromeActive = false;
-        isShopActive = false;
-        isSupplierActive = false;
-        isBankActive = false;
-        isStocksActive = false;
-        isLiderboardActive = false;
-        isUpgradeActive = false;
-        isSettingsActive = true;
-        ChromeBottomNode.classList.remove("bottom-opened-icon");
-        ShopBottomNode.classList.remove("bottom-opened-icon");
-        SupplierBottomNode.classList.remove("bottom-opened-icon");
-        BankBottomNode.classList.remove("bottom-opened-icon");
-        StocksBottomNode.classList.remove("bottom-opened-icon");
-        LiderboardBottomNode.classList.remove("bottom-opened-icon");
-        UpgradeBottomNode.classList.remove("bottom-opened-icon");
-        SettingsBottomNode.classList.add("bottom-opened-icon");
-        mainNode.style.display = "none";
-        ShopNode.style.display = "none";
-        ChromeNode.style.display = "none";
-        SupplierNode.style.display = "none";
-        BankNode.style.display = "none";
-        StocksNode.style.display = "none";
-        LiderboardNode.style.display = "none";
-        UpgradeNode.style.display = "none";
-        SettingsNode.style.display = "flex";
-      } else {
-        return;
-      }
-      break;
-
-    default:
-      break;
+  for (const icon of Object.values(bottomIcons)) {
+    icon.classList.remove("bottom-opened-icon");
   }
+  if (app !== "main") {
+    bottomIcons[app].classList.add("bottom-opened-icon");
+  }
+
+  for (const node of Object.values(AppNodes)) {
+    node.style.display = "none";
+  }
+  AppNodes[app].style.display = "flex";
+
+  if (app === "chrome") {
+    if (lastOpenedChromeTab === 1) {
+      document
+        .querySelector(".chrome-screen-kitties")
+        .classList.remove("d-none");
+      document
+        .querySelector(".chrome-screen-capybaras")
+        .classList.add("d-none");
+      document
+        .querySelector(".chrome-screen-promocodes")
+        .classList.add("d-none");
+      document.getElementById("tab-chrome-1").classList.add("active");
+      document.getElementById("tab-chrome-2").classList.remove("active");
+      document.getElementById("tab-chrome-3").classList.remove("active");
+    } else if (lastOpenedChromeTab === 2) {
+      document.querySelector(".chrome-screen-kitties").classList.add("d-none");
+      document
+        .querySelector(".chrome-screen-capybaras")
+        .classList.remove("d-none");
+      document
+        .querySelector(".chrome-screen-promocodes")
+        .classList.add("d-none");
+      document.getElementById("tab-chrome-1").classList.remove("active");
+      document.getElementById("tab-chrome-2").classList.add("active");
+      document.getElementById("tab-chrome-3").classList.remove("active");
+    } else if (lastOpenedChromeTab === 3) {
+      document.querySelector(".chrome-screen-kitties").classList.add("d-none");
+      document
+        .querySelector(".chrome-screen-capybaras")
+        .classList.add("d-none");
+      document
+        .querySelector(".chrome-screen-promocodes")
+        .classList.remove("d-none");
+      document.getElementById("tab-chrome-1").classList.remove("active");
+      document.getElementById("tab-chrome-2").classList.remove("active");
+      document.getElementById("tab-chrome-3").classList.add("active");
+    }
+  }
+};
+
+const closeApp = (app) => {
+  openApp("main");
 };
