@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Селлер</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main" id="main">
+      <div class="main__screen">
+        <div class="screen-main-item item-chrome" onclick="openChrome()">
+          <img src="/images/chrome.png" />
+          <p class="item-name">Chrome</p>
+        </div>
+        <div class="screen-main-item item-shop" onclick="openShop()">
+          <img src="/images/shop.png" />
+          <p class="item-name">Магазин</p>
+        </div>
+        <div class="screen-main-item item-supplier" onclick="openSupplier()">
+          <img src="/images/supplier.png" />
+          <p class="item-name">Поставщик</p>
+        </div>
+        <div class="screen-main-item item-bank" onclick="openBank()">
+          <img src="/images/bank.png" />
+          <p class="item-name">Банк</p>
+        </div>
+        <div class="screen-main-item item-stocks" onclick="openStocks()">
+          <img src="/images/stocks.png" />
+          <p class="item-name">Тренды</p>
+        </div>
+        <div class="screen-main-item item-liderboard" onclick="openLiderboard()">
+          <img src="/images/liderboard.png" />
+          <p class="item-name">Таблица лидеров</p>
+        </div>
+        <div class="screen-main-item item-upgrade" onclick="openUpgrade()">
+          <img src="/images/upgrade.png" />
+          <p class="item-name">Улучшения</p>
+        </div>
+        <div class="screen-main-item item-settings" onclick="openSettings()">
+          <img src="/images/settings.png" />
+          <p class="item-name">Настройки</p>
+        </div>
+        <div class="note">
+          <img src="/images/zakr.png" class="zakr" />
+          <p style="font-weight: bold">
+            Цели на: <span class="note-date-container"></span>
+          </p>
+          <br />
+          <ol>
+            <li class="note-item">Пресс качат</li>
+            <hr />
+            <li class="note-item">Бегит</li>
+            <hr />
+            <li class="note-item">Спат</li>
+            <hr />
+            <li class="note-item">Заработать мильён</li>
+            <hr />
+            <li class="note-item">Спат..</li>
+          </ol>
+        </div>
+      </div>
+      <div class="chrome__screen">
+        <div class="chrome-window light-theme">
+          <div class="chrome-screen-top">
+            <div class="chrome-screen-top-left">
+              <div class="chrome-tab active" id="tab-chrome-1">
+                <img src="/images/cat.png" class="chrome-tab-img" alt="" />
+                <p class="chrome-tab-name">Котята</p>
+                <span class="chrome-tab-close">&times;</span>
+              </div>
+
+              <div class="chrome-tab" id="tab-chrome-2">
+                <img src="images/capybara.png" class="chrome-tab-img" alt="" />
+                <p class="chrome-tab-name">Капибары</p>
+                <span class="chrome-tab-close">&times;</span>
+              </div>
+
+              <div class="chrome-tab" id="tab-chrome-3">
+                <img src="images/promo.png" class="chrome-tab-img" alt="" />
+                <p class="chrome-tab-name">Промокоды</p>
+                <span class="chrome-tab-close">&times;</span>
+              </div>
+
+              <button class="chrome-add-tab-btn">+</button>
+            </div>
+
+            <div class="chrome-screen-top-right">
+              <button class="chrome-win-btn">―</button>
+              <button class="chrome-win-btn">▢</button>
+              <button class="chrome-close-btn" onclick="closeChrome()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  fill="currentColor"
+                  class="bi bi-x"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="chrome-address-bar">
+            <div class="chrome-nav-buttons">
+              <button class="chrome-nav-btn" title="Назад" disabled>
+                <svg viewBox="0 0 16 16" width="100%" height="100%">
+                  <path
+                    fill="currentColor"
+                    d="M11.03 1.97a.75.75 0 0 1 0 1.06L5.81 8l5.22 5.22a.75.75 0 1 1-1.06 1.06l-5.75-5.75a.75.75 0 0 1 0-1.06l5.75-5.75a.75.75 0 0 1 1.06 0z"
+                  />
+                </svg>
+              </button>
+              <button class="chrome-nav-btn" title="Вперед" disabled>
+                <svg viewBox="0 0 16 16" width="100%" height="100%">
+                  <path
+                    fill="currentColor"
+                    d="M4.97 1.97a.75.75 0 0 0 0 1.06L10.19 8l-5.22 5.22a.75.75 0 0 0 1.06 1.06l5.75-5.75a.75.75 0 0 0 0-1.06L6.03 1.97a.75.75 0 0 0-1.06 0z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="chrome-nav-btn chrome-nav-btn-reload"
+                title="Перезагрузить страницу"
+              >
+                <svg viewBox="0 0 16 16" width="100%" height="100%">
+                  <path
+                    fill="currentColor"
+                    d="M8 2.5a5.492 5.492 0 0 0-4.195 1.944l1.22 1.22a.25.25 0 0 1-.177.427H1.625a.25.25 0 0 1-.25-.25V2.625a.25.25 0 0 1 .427-.177l1.171 1.171A7 7 0 1 1 8 15a6.975 6.975 0 0 1-5.143-2.253a.75.75 0 1 1 1.12-1A5.475 5.475 0 0 0 8 13.5a5.5 5.5 0 1 0 0-11z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="chrome-url-container">
+              <span class="chrome-input-icon">
+                <svg viewBox="0 0 16 16" width="100%" height="100%">
+                  <path
+                    fill="currentColor"
+                    d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7V4.5A3.5 3.5 0 0 0 8 1zm2.5 3.5V7h-5V4.5a2.5 2.5 0 0 1 5 0zM4.5 8.5h7a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+              </span>
+              <input
+                type="text"
+                class="chrome-url-input"
+                value="https://games.yandex.ru/console/developer/87121"
+                readonly
+              />
+            </div>
+
+            <div class="chrome-side-buttons">
+              <button class="chrome-nav-btn" title="Расширения">
+                <img src="/images/incognito.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chrome-screen-content chrome-screen-kitties d-none">
+          <div class="cats-container">
+            <div class="cat-item"><img src="/images/cat1.png" /></div>
+            <div class="cat-item"><img src="/images/cat2.png" /></div>
+            <div class="cat-item"><img src="/images/cat3.png" /></div>
+            <div class="cat-item"><img src="/images/cat4.png" /></div>
+            <div class="cat-item"><img src="/images/cat5.png" /></div>
+            <div class="cat-item"><img src="/images/cat6.png" /></div>
+            <div class="cat-item"><img src="/images/cat7.png" /></div>
+            <div class="cat-item"><img src="/images/cat8.png" /></div>
+            <div class="cat-item"><img src="/images/cat9.png" /></div>
+            <div class="cat-item"><img src="/images/cat10.png" /></div>
+            <div class="cat-item"><img src="/images/cat11.png" /></div>
+            <div class="cat-item"><img src="/images/cat12.png" /></div>
+            <div></div>
+            <p class="cat-item-end">Смотреть котеке бесплатно закончилось :(</p>
+          </div>
+        </div>
+        <div class="chrome-screen-content chrome-screen-capybaras d-none">
+          <div class="cats-container">
+            <div class="cat-item"><img src="/images/capybara1.png" /></div>
+            <div class="cat-item"><img src="/images/capybara2.png" /></div>
+            <div class="cat-item"><img src="/images/capybara3.png" /></div>
+            <div class="cat-item"><img src="/images/capybara4.png" /></div>
+            <div class="cat-item"><img src="/images/capybara5.png" /></div>
+            <div class="cat-item"><img src="/images/capybara6.png" /></div>
+            <div class="cat-item"><img src="/images/capybara7.png" /></div>
+            <div class="cat-item"><img src="/images/capybara8.png" /></div>
+            <div class="cat-item"><img src="/images/capybara9.png" /></div>
+            <div class="cat-item"><img src="/images/capybara10.png" /></div>
+            <div class="cat-item"><img src="/images/capybara11.png" /></div>
+            <div class="cat-item"><img src="/images/capybara12.png" /></div>
+            <div></div>
+            <p class="cat-item-end">Капибарята временно ok i pull up :)</p>
+          </div>
+        </div>
+        <div class="chrome-screen-content chrome-screen-promocodes d-none">
+          <div class="chrome-promocodes-page">
+            <header class="chrome-promocodes-header">
+              <div class="chrome-promocodes-header-left">
+                <div class="chrome-promocodes-title">Промокоды</div>
+                <div class="chrome-promocodes-subtitle">
+                  Получай бонусы за рекламу и ежедневные награды
+                </div>
+              </div>
+
+              <div class="chrome-promocodes-status">
+                <div>Статус: <span class="online">online</span></div>
+                <div class="chrome-promocodes-update">Обновление: 24h</div>
+              </div>
+            </header>
+
+            <main class="chrome-promocodes-body">
+              <div class="chrome-promocodes-grid">
+                <section class="chrome-promocodes-column chrome-promocodes-column-standard" onclick="openPromocodes(this)">
+                  <div class="chrome-promocodes-column-title">Стандартный</div>
+                  <div class="chrome-promocodes-column-under-title">+15% от баланса</div>
+                  <div class="chrome-promocodes-img-ad" ><img src="/images/ad.svg" class="promocodes-img-ad-1"><p class="promo-open promo-open-standard"></p></div>
+                  <div class="chrome-promocodes-list" ></div>
+                </section>
+
+                <section class="chrome-promocodes-column chrome-promocodes-column-epic" onclick="openPromocodes(this)">
+                  <div class="chrome-promocodes-column-title">Эпический</div>
+                  <div class="chrome-promocodes-column-under-title">+35% от баланса</div>
+                  <div class="chrome-promocodes-img-ad" ><img src="/images/ad.svg" class="promocodes-img-ad-2"><p class="promo-open promo-open-epic"></p></div>
+                  <div class="chrome-promocodes-list" ></div>
+                </section>
+
+                <section class="chrome-promocodes-column chrome-promocodes-column-legendary" onclick="openPromocodes(this)">
+                  <div class="chrome-promocodes-column-title">Легендарный</div>
+                  <div class="chrome-promocodes-column-under-title">+75% от баланса</div>
+                  <div class="chrome-promocodes-img-ad" ><img src="/images/ad.svg" class="promocodes-img-ad-3"><p class="promo-open promo-open-legendary"></p></div>
+                  <div class="chrome-promocodes-list" ></div>
+                </section>
+
+                <section class="chrome-promocodes-column chrome-promocodes-column-default" onclick="openPromocodes(this)">
+                  <div class="chrome-promocodes-column-title">Стандартный</div>
+                  <div class="chrome-promocodes-column-under-title">+10% от баланса</div>
+                  <div class="chrome-promocodes-img-ad" ><p class="promo-open promo-open-default">Открыть</p></div>
+                  <div class="chrome-promocodes-list" ></div>
+                </section>
+
+                <section class="chrome-promocodes-column chrome-promocodes-column-everyday" onclick="openPromocodes(this)">
+                  <div class="chrome-promocodes-column-title">Ежедневный</div>
+                  <div class="chrome-promocodes-column-under-title">+25% от баланса</div>
+                  <div class="chrome-promocodes-img-ad" ><p class="promo-open promo-open-everyday">Открыть</p></div>
+                  <div class="chrome-promocodes-list" ></div>
+                </section>
+              </div>
+
+              <section class="chrome-promocodes-section">
+                <div class="section-title">О сервисе</div>
+                <div class="section-text">
+                  Внутриигровая система бонусов. Не настоящий сервис.
+                </div>
+              </section>
+
+              <section class="chrome-promocodes-section">
+                <div class="section-title">Преимущества</div>
+
+                <div class="benefits">
+                  <div class="benefit">⚡ Быстрая выдача</div>
+                  <div class="benefit">🎁 Самые свежие промокоды</div>
+                  <div class="benefit">🕒 Ежедневные бонусные промокоды</div>
+                </div>
+              </section>
+            </main>
+
+            <footer class="chrome-promocodes-footer">
+              <div>F1CUS © 2026</div>
+              <div>Политика конфиденциальности</div>
+            </footer>
+          </div>
+        </div>
+      </div>
+      <div class="shop__screen">shop</div>
+      <div class="supplier__screen">supplier</div>
+      <div class="bank__screen">bank</div>
+      <div class="stocks__screen">stocks</div>
+      <div class="liderboard__screen">liderboard</div>
+      <div class="upgrade__screen">upgrade</div>
+      <div class="settings__screen">settings</div>
+      <div class="main_screen-bottom">
+        <div class="main_screen-bottom-left"></div>
+        <div class="main_screen-bottom-center">
+          <div class="screen-bottom-item item-window">
+            <img src="/images/windows.png" />
+            <div class="item-windows">
+              <p id="next-day" onclick="nextDay(event)">
+                Перейти на следующий день
+              </p>
+            </div>
+          </div>
+          <div
+            class="screen-bottom-item item-chrome-bottom"
+            onclick="openChrome()">
+            <img src="/images/chrome.png" />
+          </div>
+          <div class="screen-bottom-item item-shop-bottom"
+            onclick="openShop()">
+            <img src="/images/shop.png" />
+          </div>
+          <div class="screen-bottom-item item-supplier-bottom" onclick="openSupplier()">
+            <img src="/images/supplier.png" />
+          </div>
+          <div class="screen-bottom-item item-bank-bottom" onclick="openBank()">
+            <img src="/images/bank.png" />
+          </div>
+          <div class="screen-bottom-item item-stocks-bottom" onclick="openStocks()">
+            <img src="/images/stocks.png" />
+          </div>
+          <div class="screen-bottom-item item-liderboard-bottom" onclick="openLiderboard()">
+            <img src="/images/liderboard.png" />
+          </div>
+          <div class="screen-bottom-item item-upgrade-bottom" onclick="openUpgrade()">
+            <img src="/images/upgrade.png" />
+          </div>
+          <div class="screen-bottom-item item-settings-bottom" onclick="openSettings()">
+            <img src="/images/settings.png" />
+          </div>
+        </div>
+        <div class="main_screen-bottom-right">
+          <div class="kboard-container">
+            <div class="kboard-modal-container">qwe</div>
+            <img src="images/keyboard.svg" alt="" />
+          </div>
+          <div class="wifi-container">
+            <div class="wifi-modal-container">
+              <div class="wifi-modal-container-left">
+                <div class="wifi-led"></div>
+                <div class="wifi-name">f1cus_5G_ethernet</div>
+              </div>
+              <div class="wifi-on">Подключено</div>
+            </div>
+            <img src="images/wifi.svg" alt="" />
+          </div>
+          <div class="date-container">
+            <div class="date-container-p">09.06.2026</div>
+            <div class="time-container-p">00:00:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/down-menu.js" defer></script>
+  </body>
+</html>
