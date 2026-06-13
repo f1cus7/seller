@@ -17,7 +17,10 @@
           <img src="/images/shop.png" />
           <p class="item-name">Магазин</p>
         </div>
-        <div class="screen-main-item item-supplier" onclick="openApp('supplier')">
+        <div
+          class="screen-main-item item-supplier"
+          onclick="openApp('supplier')"
+        >
           <img src="/images/supplier.png" />
           <p class="item-name">Поставщик</p>
         </div>
@@ -29,7 +32,10 @@
           <img src="/images/stocks.png" />
           <p class="item-name">Тренды</p>
         </div>
-        <div class="screen-main-item item-liderboard" onclick="openApp('liderboard')">
+        <div
+          class="screen-main-item item-liderboard"
+          onclick="openApp('liderboard')"
+        >
           <img src="/images/liderboard.png" />
           <p class="item-name">Таблица лидеров</p>
         </div>
@@ -37,7 +43,10 @@
           <img src="/images/upgrade.png" />
           <p class="item-name">Улучшения</p>
         </div>
-        <div class="screen-main-item item-settings" onclick="openApp('settings')">
+        <div
+          class="screen-main-item item-settings"
+          onclick="openApp('settings')"
+        >
           <img src="/images/settings.png" />
           <p class="item-name">Настройки</p>
         </div>
@@ -88,7 +97,7 @@
             <div class="chrome-screen-top-right">
               <button class="chrome-win-btn">―</button>
               <button class="chrome-win-btn">▢</button>
-              <button class="chrome-close-btn" onclick="closeApp('chrome')">
+              <button class="chrome-close-btn" onclick="closeApp()">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100%"
@@ -214,39 +223,77 @@
 
             <main class="chrome-promocodes-body">
               <div class="chrome-promocodes-grid">
-                <section class="chrome-promocodes-column chrome-promocodes-column-standard" onclick="openPromocodes(this)">
+                <section
+                  class="chrome-promocodes-column chrome-promocodes-column-standard"
+                  onclick="openPromocodes(this)"
+                >
                   <div class="chrome-promocodes-column-title">Стандартный</div>
-                  <div class="chrome-promocodes-column-under-title">+15% от баланса</div>
-                  <div class="chrome-promocodes-img-ad" ><img src="/images/ad.svg" class="promocodes-img-ad-1"><p class="promo-open promo-open-standard"></p></div>
-                  <div class="chrome-promocodes-list" ></div>
+                  <div class="chrome-promocodes-column-under-title">
+                    +15% от баланса
+                  </div>
+                  <div class="chrome-promocodes-img-ad">
+                    <img src="/images/ad.svg" class="promocodes-img-ad-1" />
+                    <p class="promo-open promo-open-standard"></p>
+                  </div>
+                  <div class="chrome-promocodes-list"></div>
                 </section>
 
-                <section class="chrome-promocodes-column chrome-promocodes-column-epic" onclick="openPromocodes(this)">
+                <section
+                  class="chrome-promocodes-column chrome-promocodes-column-epic"
+                  onclick="openPromocodes(this)"
+                >
                   <div class="chrome-promocodes-column-title">Эпический</div>
-                  <div class="chrome-promocodes-column-under-title">+35% от баланса</div>
-                  <div class="chrome-promocodes-img-ad" ><img src="/images/ad.svg" class="promocodes-img-ad-2"><p class="promo-open promo-open-epic"></p></div>
-                  <div class="chrome-promocodes-list" ></div>
+                  <div class="chrome-promocodes-column-under-title">
+                    +35% от баланса
+                  </div>
+                  <div class="chrome-promocodes-img-ad">
+                    <img src="/images/ad.svg" class="promocodes-img-ad-2" />
+                    <p class="promo-open promo-open-epic"></p>
+                  </div>
+                  <div class="chrome-promocodes-list"></div>
                 </section>
 
-                <section class="chrome-promocodes-column chrome-promocodes-column-legendary" onclick="openPromocodes(this)">
+                <section
+                  class="chrome-promocodes-column chrome-promocodes-column-legendary"
+                  onclick="openPromocodes(this)"
+                >
                   <div class="chrome-promocodes-column-title">Легендарный</div>
-                  <div class="chrome-promocodes-column-under-title">+75% от баланса</div>
-                  <div class="chrome-promocodes-img-ad" ><img src="/images/ad.svg" class="promocodes-img-ad-3"><p class="promo-open promo-open-legendary"></p></div>
-                  <div class="chrome-promocodes-list" ></div>
+                  <div class="chrome-promocodes-column-under-title">
+                    +75% от баланса
+                  </div>
+                  <div class="chrome-promocodes-img-ad">
+                    <img src="/images/ad.svg" class="promocodes-img-ad-3" />
+                    <p class="promo-open promo-open-legendary"></p>
+                  </div>
+                  <div class="chrome-promocodes-list"></div>
                 </section>
 
-                <section class="chrome-promocodes-column chrome-promocodes-column-default" onclick="openPromocodes(this)">
+                <section
+                  class="chrome-promocodes-column chrome-promocodes-column-default"
+                  onclick="openPromocodes(this)"
+                >
                   <div class="chrome-promocodes-column-title">Стандартный</div>
-                  <div class="chrome-promocodes-column-under-title">+10% от баланса</div>
-                  <div class="chrome-promocodes-img-ad" ><p class="promo-open promo-open-default">Открыть</p></div>
-                  <div class="chrome-promocodes-list" ></div>
+                  <div class="chrome-promocodes-column-under-title">
+                    +10% от баланса
+                  </div>
+                  <div class="chrome-promocodes-img-ad">
+                    <p class="promo-open promo-open-default">Открыть</p>
+                  </div>
+                  <div class="chrome-promocodes-list"></div>
                 </section>
 
-                <section class="chrome-promocodes-column chrome-promocodes-column-everyday" onclick="openPromocodes(this)">
+                <section
+                  class="chrome-promocodes-column chrome-promocodes-column-everyday"
+                  onclick="openPromocodes(this)"
+                >
                   <div class="chrome-promocodes-column-title">Ежедневный</div>
-                  <div class="chrome-promocodes-column-under-title">+25% от баланса</div>
-                  <div class="chrome-promocodes-img-ad" ><p class="promo-open promo-open-everyday">Открыть</p></div>
-                  <div class="chrome-promocodes-list" ></div>
+                  <div class="chrome-promocodes-column-under-title">
+                    +25% от баланса
+                  </div>
+                  <div class="chrome-promocodes-img-ad">
+                    <p class="promo-open promo-open-everyday">Открыть</p>
+                  </div>
+                  <div class="chrome-promocodes-list"></div>
                 </section>
               </div>
 
@@ -275,7 +322,254 @@
           </div>
         </div>
       </div>
-      <div class="shop__screen">shop</div>
+      <div class="shop__screen">
+        <div class="app-top">
+          <button class="app-win-btn">―</button>
+          <button class="app-win-btn">▢</button>
+          <button class="app-win-btn" onclick="closeApp()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="100%"
+              fill="currentColor"
+              class="bi bi-x"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 
+                  .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 
+                  2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="shop-main">
+          <div class="shop-main-content">
+            <div class="shop-greet">
+              Добро пожаловать, <span class="shop-user-name">Пользователь</span>
+              <span class="shop-greet-emoji">👋</span><br />
+              <p class="shop-greet-desc">Вот что происходит в вашем магазине</p>
+            </div>
+            <div class="shop-statistic-container">
+              <div class="shop-statistic shop-statistic-revenue">
+                <div class="shop-statistic-item">
+                  <div class="shop-statistic-item-top">
+                    <div class="shop-statistic-item-top-left">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        fill="#407f1c"
+                        class="bi bi-wallet2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 
+                        0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1
+                         0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 
+                         0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 
+                         .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="shop-statistic-item-top-right">
+                      <p class="shop-statistic-item-top-right-title">Выручка</p>
+                      <p class="shop-statistic-item-rub-p">
+                        <span class="shop-statistic-item-rub-revenue">1 250 450</span> ₽
+                      </p>
+                    </div>
+                  </div>
+                  <div class="shop-statistic-compare">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrow-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 
+                      .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 
+                      .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+                      />
+                    </svg>
+                    <span class="statistic-compare-percent">12.5%</span>
+                    <p>по сравнению с прошлым днём</p>
+                  </div>
+                  <div class="shop-statistic-graphic-container">
+                    <canvas class="shop-statistic-graphic-revenue"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-statistic shop-statistic-earnings">
+                <div class="shop-statistic-item">
+                  <div class="shop-statistic-item-top">
+                    <div class="shop-statistic-item-top-left">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        fill="#407f1c"
+                        class="bi bi-cash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                        <path
+                          d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 
+                        1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2
+                         2 0 0 1 2-2V6a2 2 0 0 1-2-2z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="shop-statistic-item-top-right">
+                      <p class="shop-statistic-item-top-right-title">Прибыль</p>
+                      <p class="shop-statistic-item-rub-p">
+                        <span class="shop-statistic-item-rub-earnings">462 150</span> ₽
+                      </p>
+                    </div>
+                  </div>
+                  <div class="shop-statistic-compare">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrow-up"
+                      viewBox="0 0 16 16"
+                      style="transform: rotate(180deg)"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 
+                      .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 
+                      .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+                      />
+                    </svg>
+                    <span class="statistic-compare-percent">4.2%</span>
+                    <p>по сравнению с прошлым днём</p>
+                  </div>
+                  <div class="shop-statistic-graphic-container">
+                    <canvas class="shop-statistic-graphic-earnings"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-statistic shop-statistic-orders">
+                <div class="shop-statistic-item">
+                  <div class="shop-statistic-item-top">
+                    <div class="shop-statistic-item-top-left">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        fill="#407f1c"
+                        class="bi bi-cart2"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1
+                         .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5
+                          0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 
+                          0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2
+                           1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
+                        />
+                      </svg>
+                    </div>
+                    <div class="shop-statistic-item-top-right">
+                      <p class="shop-statistic-item-top-right-title">Заказы</p>
+                      <p class="shop-statistic-item-rub-p">
+                        <span class="shop-statistic-item-rub">182</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="shop-statistic-compare">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrow-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 
+                      .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 
+                      .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+                      />
+                    </svg>
+                    <span class="statistic-compare-percent">3.8%</span>
+                    <p>по сравнению с прошлым днём</p>
+                  </div>
+                  <div class="shop-statistic-graphic-container">
+                    <canvas class="shop-statistic-graphic-orders"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-statistic shop-statistic-average-bill">
+                <div class="shop-statistic-item">
+                  <div class="shop-statistic-item-top">
+                    <div class="shop-statistic-item-top-left">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        fill="#407f1c"
+                        class="bi bi-coin"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098
+                         2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396
+                          1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853
+                           0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692
+                            1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"
+                        />
+                        <path
+                          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                        />
+                        <path
+                          d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"
+                        />
+                      </svg>
+                    </div>
+                    <div class="shop-statistic-item-top-right">
+                      <p class="shop-statistic-item-top-right-title">Средний чек</p>
+                      <p class="shop-statistic-item-rub-p">
+                        <span class="shop-statistic-item-rub">3 627</span> ₽
+                      </p>
+                    </div>
+                  </div>
+                  <div class="shop-statistic-compare">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-arrow-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 
+                      .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 
+                      .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+                      />
+                    </svg>
+                    <span class="statistic-compare-percent">9.0%</span>
+                    <p>по сравнению с прошлым днём</p>
+                  </div>
+                  <div class="shop-statistic-graphic-container">
+                    <canvas class="shop-statistic-graphic-average-bill"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="supplier__screen">supplier</div>
       <div class="bank__screen">bank</div>
       <div class="stocks__screen">stocks</div>
@@ -295,29 +589,50 @@
           </div>
           <div
             class="screen-bottom-item item-chrome-bottom"
-            onclick="openApp('chrome')">
+            onclick="openApp('chrome')"
+          >
             <img src="/images/chrome.png" />
           </div>
-          <div class="screen-bottom-item item-shop-bottom"
-            onclick="openApp('shop')">
+          <div
+            class="screen-bottom-item item-shop-bottom"
+            onclick="openApp('shop')"
+          >
             <img src="/images/shop.png" />
           </div>
-          <div class="screen-bottom-item item-supplier-bottom" onclick="openApp('supplier')">
+          <div
+            class="screen-bottom-item item-supplier-bottom"
+            onclick="openApp('supplier')"
+          >
             <img src="/images/supplier.png" />
           </div>
-          <div class="screen-bottom-item item-bank-bottom" onclick="openApp('bank')">
+          <div
+            class="screen-bottom-item item-bank-bottom"
+            onclick="openApp('bank')"
+          >
             <img src="/images/bank.png" />
           </div>
-          <div class="screen-bottom-item item-stocks-bottom" onclick="openApp('stocks')">
+          <div
+            class="screen-bottom-item item-stocks-bottom"
+            onclick="openApp('stocks')"
+          >
             <img src="/images/stocks.png" />
           </div>
-          <div class="screen-bottom-item item-liderboard-bottom" onclick="openApp('liderboard')">
+          <div
+            class="screen-bottom-item item-liderboard-bottom"
+            onclick="openApp('liderboard')"
+          >
             <img src="/images/liderboard.png" />
           </div>
-          <div class="screen-bottom-item item-upgrade-bottom" onclick="openApp('upgrade')">
+          <div
+            class="screen-bottom-item item-upgrade-bottom"
+            onclick="openApp('upgrade')"
+          >
             <img src="/images/upgrade.png" />
           </div>
-          <div class="screen-bottom-item item-settings-bottom" onclick="openApp('settings')">
+          <div
+            class="screen-bottom-item item-settings-bottom"
+            onclick="openApp('settings')"
+          >
             <img src="/images/settings.png" />
           </div>
         </div>
@@ -346,5 +661,6 @@
 
     <script src="/scripts/script.js" defer></script>
     <script src="/scripts/down-menu.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

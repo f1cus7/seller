@@ -247,6 +247,8 @@ window.openPromocodes = (promo) => {
   }
 };
 
+// конец chrome
+
 setInterval(() => {
   localStorage.setItem("chromeTab", lastOpenedChromeTab);
 }, 1000);
@@ -292,45 +294,217 @@ const openApp = (app) => {
   AppNodes[app].style.display = "flex";
 
   if (app === "chrome") {
-    if (lastOpenedChromeTab === 1) {
-      document
-        .querySelector(".chrome-screen-kitties")
-        .classList.remove("d-none");
-      document
-        .querySelector(".chrome-screen-capybaras")
-        .classList.add("d-none");
-      document
-        .querySelector(".chrome-screen-promocodes")
-        .classList.add("d-none");
-      document.getElementById("tab-chrome-1").classList.add("active");
-      document.getElementById("tab-chrome-2").classList.remove("active");
-      document.getElementById("tab-chrome-3").classList.remove("active");
-    } else if (lastOpenedChromeTab === 2) {
-      document.querySelector(".chrome-screen-kitties").classList.add("d-none");
-      document
-        .querySelector(".chrome-screen-capybaras")
-        .classList.remove("d-none");
-      document
-        .querySelector(".chrome-screen-promocodes")
-        .classList.add("d-none");
-      document.getElementById("tab-chrome-1").classList.remove("active");
-      document.getElementById("tab-chrome-2").classList.add("active");
-      document.getElementById("tab-chrome-3").classList.remove("active");
-    } else if (lastOpenedChromeTab === 3) {
-      document.querySelector(".chrome-screen-kitties").classList.add("d-none");
-      document
-        .querySelector(".chrome-screen-capybaras")
-        .classList.add("d-none");
-      document
-        .querySelector(".chrome-screen-promocodes")
-        .classList.remove("d-none");
-      document.getElementById("tab-chrome-1").classList.remove("active");
-      document.getElementById("tab-chrome-2").classList.remove("active");
-      document.getElementById("tab-chrome-3").classList.add("active");
+    const tabs = [
+      {
+        tab: 1,
+        show: ".chrome-screen-kitties",
+      },
+      {
+        tab: 2,
+        show: ".chrome-screen-capybaras",
+      },
+      {
+        tab: 3,
+        show: ".chrome-screen-promocodes",
+      },
+    ];
+
+    for (const t of tabs) {
+      const screen = document.querySelector(t.show);
+      const tabEl = document.getElementById(`tab-chrome-${t.tab}`);
+
+      const isActive = lastOpenedChromeTab === t.tab;
+
+      screen.classList.toggle("d-none", !isActive);
+      tabEl.classList.toggle("active", isActive);
     }
   }
 };
 
-const closeApp = (app) => {
+const closeApp = () => {
   openApp("main");
 };
+
+// график выручки
+const graphicRevenueNode = document.querySelector('.shop-statistic-graphic-revenue');
+const graphicEarningsNode = document.querySelector('.shop-statistic-graphic-earnings');
+const graphicOrdersNode = document.querySelector('.shop-statistic-graphic-orders');
+const graphicAverageBillNode = document.querySelector('.shop-statistic-graphic-average-bill');
+
+let graphicRevenue = new Chart(graphicRevenueNode, {
+  type: 'line',
+  data: {
+    labels: ['', '', '', '', '', '', '', '', '', ''],
+    datasets: [{
+      label: 'Выручка',
+      data: [12, 19, 3, 5, 112, 42, 12, 1, 112, 179],
+      borderColor: '#579f2a',
+      tension: 0
+    }]
+  },
+  options: {
+    responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      }
+    },
+    y: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      },
+      ticks: {
+        display: false
+      }
+    }
+  }
+}
+});
+
+let graphicEarnings = new Chart(graphicEarningsNode, {
+  type: 'line',
+  data: {
+    labels: ['', '', '', '', '', '', '', '', '', ''],
+    datasets: [{
+      label: 'Прибыль',
+      data: [42, 19, 111, 123, 112, 87, 65, 87, 54, 22],
+      borderColor: '#ef4444',
+      tension: 0
+    }]
+  },
+  options: {
+    responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      }
+    },
+    y: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      },
+      ticks: {
+        display: false
+      }
+    }
+  }
+}
+});
+
+let graphicOrders = new Chart(graphicOrdersNode, {
+  type: 'line',
+  data: {
+    labels: ['', '', '', '', '', '', '', '', '', ''],
+    datasets: [{
+      label: 'Заказы',
+      data: [12, 19, 3, 5, 12, 42, 12, 1, 18, 19],
+      borderColor: '#579f2a',
+      tension: 0
+    }]
+  },
+  options: {
+    responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      }
+    },
+    y: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      },
+      ticks: {
+        display: false
+      }
+    }
+  }
+}
+});
+
+let graphicAverageBill = new Chart(graphicAverageBillNode, {
+  type: 'line',
+  data: {
+    labels: ['', '', '', '', '', '', '', '', '', ''],
+    datasets: [{
+      label: 'Средний чек',
+      data: [312, 500, 1113, 3115, 2212, 3142, 4212, 1111, 1822, 3627],
+      borderColor: '#579f2a',
+      tension: 0
+    }]
+  },
+  options: {
+    responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      }
+    },
+    y: {
+      grid: {
+        display: false
+      },
+      border: {
+        display: false
+      },
+      ticks: {
+        display: false
+      }
+    }
+  }
+}
+});
+
+// потом так изменять надо
+// setTimeout(() => {
+//   graphicRevenue.data.datasets[0].borderColor = '#9f2a2a';
+//   graphicRevenue.update();
+// }, 5000);
